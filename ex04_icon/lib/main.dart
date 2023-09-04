@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
         
         title: Text(widget.title),
       ),
-      body: Container(    //아이콘은 상수이기 때문에 아래모두 상수처리하짐라고
+      body: Container(    //아이콘은 상수이기 때문에 아래모두 상수처리하지말고
                             //여기서 상수처리하면됨
         child: const Column(
           children:<Widget> [
@@ -113,6 +113,115 @@ class _MyHomePageState extends State<MyHomePage> {
              children:<Widget> [
             Icon(
               Icons.cancel,
+              color: Colors.orange,  
+              size: 35.0,
+            ),
+            Icon(
+              Icons.smoking_rooms_rounded,
+              color: Colors.orange,  
+              size: 35.0,
+            ),
+            Icon(
+              Icons.sms,
+              color: Colors.orange,  
+              size: 35.0,
+            ),
+            Icon(
+              Icons.sms_failed_outlined,
+              color: Colors.orange,  
+              size: 35.0,
+            ),
+            Icon(
+              Icons.telegram_rounded,
+              color: Colors.orange,  
+              size: 35.0,
+            ),
+            Icon(
+              Icons.telegram_outlined,
+              color: Colors.orange,  
+              size: 35.0,
+            ),
+            Icon(
+              Icons.telegram_sharp,
+              color: Colors.orange,  
+              size: 35.0,
+            ),
+            Icon(
+              Icons.telegram,
+              color: Colors.orange,  
+              size: 35.0,
+            ),
+            Icon(
+              Icons.collections_bookmark,
+              color: Colors.orange,  
+              size: 35.0,
+            ),
+            Icon(
+              Icons.construction,
+              color: Colors.orange,  
+              size: 35.0,
+            ),
+            Icon(
+              Icons.content_cut,
+              color: Colors.orange,  
+              size: 35.0,
+            ),
+          ],
+        ),
+         Row(
+             children:<Widget> [
+            Icon(
+              Icons.copy_outlined,
+              color: Colors.orange,  
+              size: 35.0,
+            ),
+            Icon(
+              Icons.data_object,
+              color: Colors.orange,  
+              size: 35.0,
+            ),
+            Icon(
+              Icons.do_not_disturb,
+              color: Colors.orange,  
+              size: 35.0,
+            ),
+            Icon(
+              Icons.home,
+              color: Colors.orange,  
+              size: 35.0,
+            ),
+            Icon(
+              Icons.favorite,
+              color: Colors.orange,  
+              size: 35.0,
+            ),
+            Icon(
+              Icons.thumb_down,
+              color: Colors.orange,  
+              size: 35.0,
+            ),
+            Icon(
+              Icons.thumb_down_off_alt,
+              color: Colors.orange,  
+              size: 35.0,
+            ),
+            Icon(
+              Icons.thumb_up,
+              color: Colors.orange,  
+              size: 35.0,
+            ),
+            Icon(
+              Icons.thumb_up_off_alt,
+              color: Colors.orange,  
+              size: 35.0,
+            ),
+            Icon(
+              Icons.construction,
+              color: Colors.orange,  
+              size: 35.0,
+            ),
+            Icon(
+              Icons.content_cut,
               color: Colors.orange,  
               size: 35.0,
             ),
