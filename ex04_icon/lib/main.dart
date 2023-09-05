@@ -211,8 +211,8 @@ class _MyHomePageState extends State<MyHomePage> {
               size: 35.0,
             ),
             Icon(
-              Icons.thumb_up_off_alt,
               color: Colors.orange,  
+              Icons.thumb_up_off_alt,
               size: 35.0,
             ),
             Icon(
