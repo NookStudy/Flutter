@@ -120,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
            ),
 
-           Ink.image(
+          Ink.image(
             //바로 Ink로 이미지박음(좀더 자연스러움)
             //이미지로 버튼을 만들어야 할 때 쓴다.
             image: const AssetImage('assets/images/300x100.png'),
