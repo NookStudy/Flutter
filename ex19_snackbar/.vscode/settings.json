@@ -1,0 +1,6 @@
+{
+    "indentRainbow.colorOnWhiteSpaceOnly": true,
+    "indentRainbow.indicatorStyle": "light",
+    "editor.guides.indentation": true,
+    "prettier.useTabs": true
+}
