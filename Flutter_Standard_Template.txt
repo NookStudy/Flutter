@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: <Widget>[
             Text(
-              '여기에 텍스트를 입력하세요',
+              '여기에00텍스트를00입력하세요',
             ),
           ],
         ),
