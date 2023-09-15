@@ -1,4 +1,4 @@
-name: '폴더명입력'
+# name: '폴더명입력'
 description: A new Flutter project.
 
 publish_to: 'none' 

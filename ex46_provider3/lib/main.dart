@@ -4,15 +4,19 @@ void main() {
   runApp(const MyApp());
 }
 
+//데이터로 사용할 클래스 정의
 class MyData extends ChangeNotifier{
+  //초기값 설정 VO객체
   String name ='홍길동';
   int age = 25;
-
+  //데이터 변경시 호출할 메소드정의
   void change(String name, int age){
+    //로그 및 값 설정
     print('change called...');
     this.name = name;
     this.age = age;
 
+    //데이터 변경후 호출하면 변경을 반영할 수 있습니다.
     notifyListeners();
   }
 }
@@ -24,6 +28,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<MyData>(
+      //공유할 데이터를 생성
       create: (_)=> MyData(),
       child: MaterialApp(
         title: 'Flutter Demo',
@@ -50,8 +55,13 @@ class _Page1State extends State<Page1> {
 
   @override
   Widget build(BuildContext context) {
+    /*
+      데이터 사용; 변경에 대한 알림을 안받음.
+      이 경우 데이터 변경이 있더라도 즉시 build되지 않음
+    */
 
     myData = Provider.of<MyData>(context,listen: false);
+
     print("Page1 빌드됨...");
 
     return Scaffold(
@@ -69,6 +79,10 @@ class _Page1State extends State<Page1> {
               child: const Text('2페이지 추가',style: TextStyle(fontSize: 24),)
             ),
             const SizedBox(height: 50,),
+            /*
+              아래 버튼을 누르면 기존에 데이터가 변경된다.
+              변경을 위해 공유객체의 change()를 호출한다.
+            */
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.greenAccent
@@ -87,9 +101,14 @@ class _Page1State extends State<Page1> {
             ),
             const SizedBox(height: 50,),
             Text(
+              //처음 빌드될 때의 데이터로 표시된다.
               '${myData.name}- ${myData.age}',
               style:  const TextStyle(fontSize: 30),
             ),
+            /*
+              데이터 사용 - 데이터 변경이 일어나면 builer에 저장된 익명함수가 호출되고
+              지정된 위젯만 재빌드 된다.
+            */
             Consumer<MyData>(
               builder: (context, myData,child){
                 print('Consumer<MyData> 여기도 빌드됨');
@@ -115,7 +134,9 @@ class _Page2State extends State<Page2> {
 
   @override
   Widget build(BuildContext context) {
-
+    /*
+      변경에 대한 알림을 받음.
+    */
     myData = Provider.of<MyData>(context, listen: true);
     print("Page2 빌드됨...");
     return Scaffold(
@@ -142,10 +163,13 @@ class _Page2State extends State<Page2> {
               child: const Text('홍길동으로',style: TextStyle(fontSize: 24),),
           ),
             Text(
+              //바뀐 데이터를 처리하기 위해 전체를 다시 빌드해야 한다.
               '${myData.name}- ${myData.age}',
               style:  const TextStyle(fontSize: 30),
           ),
             Consumer<MyData>(
+              //데이터 사용 - 데이터 변경이 일어나면 Builder에 지정된 익명함수가 호출되고
+              //              지정한 위젯만 재빌드 된다.
               builder: (context, myData,child){
                 print('Consumer<MyData> 여기도 빌드됨');
                 return Text('${myData.name}- ${myData.age}', style:  const TextStyle(fontSize: 30),);
