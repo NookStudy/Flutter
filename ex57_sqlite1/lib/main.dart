@@ -200,6 +200,7 @@ class _MyHomePageState extends State<MyHomePage> {
     print('Insert : $count');
   }
 
+  //레코드 수정
   Future<void> doUpdate(int id) async{
     final db = await database;
 
@@ -219,6 +220,7 @@ class _MyHomePageState extends State<MyHomePage> {
     print('Delete : $count');
   }
 
+  //전체 데이터 삭제
   Future<void> doDeleteAll() async{
     final db = await database;
     int count = await db.rawDelete('delete from telbook');
