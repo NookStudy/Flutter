@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'color_schemes.g.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -15,14 +17,17 @@ class MyApp extends StatelessWidget {   //여기서 테마 선언
       // theme : ThemeData.dark(),
 
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        // useMaterial3: true,
+        // 외부에서 가져온 테마 사용
         useMaterial3: true,
+        colorScheme: lightColorScheme,
         //선택되지 않은 라디오 버튼 색깔
-        unselectedWidgetColor: Colors.green,
-        scaffoldBackgroundColor: Colors.yellow[50],
+        // unselectedWidgetColor: Colors.green,
+        // scaffoldBackgroundColor: Colors.yellow[50],
         fontFamily: 'D2Coding',
         textTheme: const TextTheme(
-         bodyMedium:  TextStyle(
+        bodyMedium:    TextStyle(
             //button
             fontSize: 30,
             height: 1.5,
@@ -32,6 +37,7 @@ class MyApp extends StatelessWidget {   //여기서 테마 선언
             ),
         ),
       ),
+      darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
       home: const MyHomePage(title: 'EX18 Theme'),
     );
   }
@@ -58,6 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 5,
 		backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
@@ -166,27 +173,27 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      // floatingActionButton: FloatingActionButton.extended(
-      //   icon: const Icon(Icons.thumb_up),
-      //   label: const Text('Approve'),
-      //   tooltip: 'Increment',   //버튼길게누르면 나옴
-      //   backgroundColor: Colors.purple,
-      //     onPressed: (){
-      //       print('ddd');
-      //     }
-      //   ), 
-      floatingActionButton: Theme(
-        data: ThemeData(
-          colorScheme:  ColorScheme.fromSwatch()
-          .copyWith(secondary: Colors.lightBlueAccent),
-          ),
-          child : FloatingActionButton(
-            child: const Icon(Icons.add),
+      floatingActionButton: FloatingActionButton.extended(
+        icon: const Icon(Icons.thumb_up),
+        label: const Text('Approve'),
         tooltip: 'Increment',   //버튼길게누르면 나옴
+        backgroundColor: Colors.purple,
           onPressed: (){
             print('ddd');
-          }), 
-        ),
+          }
+        ), 
+      // floatingActionButton: Theme(
+      //   data: ThemeData(
+      //     colorScheme:  ColorScheme.fromSwatch()
+      //     .copyWith(secondary: Colors.lightBlueAccent),
+      //     ),
+      //     child : FloatingActionButton(
+      //       child: const Icon(Icons.add),
+      //   tooltip: 'Increment',   //버튼길게누르면 나옴
+      //     onPressed: (){
+      //       print('ddd');
+      //     }), 
+      //   ),
 
     );
   }
